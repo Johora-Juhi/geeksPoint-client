@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { FaGoogle, FaGithub, FaFacebook, FaYoutube, FaWhatsapp, FaTwitter, FaTwitch, FaAlignJustify } from 'react-icons/fa';
+
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn,googleLogin } = useContext(AuthContext);
     const [error, setError] = useState('');
-    const location=useLocation();
-    const from=location.state?.from?.pathname || '/';
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const nevigate = useNavigate();
 
     const handleSubmit = event => {
@@ -16,14 +18,15 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         // console.log(email, password);
-        setError('');
+       
 
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
-                nevigate(from, {replace:true});
+                nevigate(from, { replace: true });
             })
             .catch(error => {
                 console.error('error', error);
@@ -31,36 +34,51 @@ const Login = () => {
             })
 
     }
+
+
+    const handleGoogleSignIn = () => {
+
+        googleLogin()
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+            nevigate(from, { replace: true });
+        })
+        .catch(error=> console.error('error',error))
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Please sign up here!</h1>
+                    <h1 className="text-5xl font-bold">Please login here!</h1>
                     <p className="py-6">We will not share your information.</p>
                 </div>
-                <div  className="card backgound flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card backgound flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input name='email' type="email" placeholder="email" className="input input-bordered" required/>
+                            <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input name='password' type="password" placeholder="password" className="input input-bordered" required/>
+                            <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <p className='label-text-alt'>New here? Please  <Link to='/signUp' className=" link link-hover"> Sign Up</Link></p>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-bg btn-primary">Log In</button>
+                            <button className="btn btn-bg btn-error">Log In</button>
                         </div>
                         <label className="label">
-                                <p className='label-text-alt text-red-600'>{error}</p>
-                            </label>
+                            <p className='label-text-alt text-red-600'>{error}</p>
+                        </label>
+                        <div className="divider">OR</div>
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><FaGoogle className='mr-2' /> Log In With Google</button>
+                        <button className="btn btn-outline"><FaGithub className='mr-2' /> Log In With Github</button>
                     </form>
                 </div>
             </div>

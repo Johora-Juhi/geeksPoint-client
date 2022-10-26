@@ -50,24 +50,23 @@ const Header = () => {
                     user?.uid ?
                         <>
                             <button className='btn btn-bg my-2' onClick={handleLogOut} variant="primary">Log out</button>
-                            {/* <Link href="#deets">{user?.displayName}</Link> */}
                             <div>
                                 {
                                     user?.photoURL ?
-                                        <div title={user.displayName} className="avatar ">
+                                        <div title={user.displayName} className="avatar ml-3">
                                             <div className="w-8 rounded-full">
                                                 <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" />
                                             </div>
                                         </div>
                                         :
-                                        <FaUserCircle title={user.displayName} className='ml-3 mt-1 color ' />
+                                        <FaUserCircle style={{fontSize:'30px'}} title={user.displayName} className='ml-3 mt-1 color ' />
                                 }
                             </div>
                         </>
                         :
                         <>
                             <Link className='text-light' to='/login'><button className='btn btn-bg mr-2 my-2' variant="primary">Log in</button></Link>
-                            <Link className='text-light' to='/register'><button className='btn btn-bg my-2' variant="primary">Register</button></Link>
+                            <Link className='text-light' to='/signUp'><button className='btn btn-bg my-2' variant="primary">Register</button></Link>
                         </>
                 }
 

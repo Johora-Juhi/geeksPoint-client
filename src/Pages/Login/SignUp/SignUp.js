@@ -46,7 +46,7 @@ const SignUp = () => {
         <div  className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">
             <div className="text-center lg:text-left">
-                <h1 className="text-5xl font-bold">Please login here!</h1>
+                <h1 className="text-5xl font-bold">Please signup here!</h1>
                 <p className="py-6">We will not share your information.</p>
             </div>
             <div  className="card backgound flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
