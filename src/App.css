@@ -13,6 +13,9 @@
 .backgound{
   background-color: #fef0ef;
 }
+.color{
+  color:#F56962 ;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import Logo from '../../assets/Logo2.png'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -54,13 +54,13 @@ const Header = () => {
                             <div>
                                 {
                                     user?.photoURL ?
-                                        <div className="avatar ">
+                                        <div title={user.displayName} className="avatar ">
                                             <div className="w-8 rounded-full">
-                                                <img src={user?.image} alt="Tailwind-CSS-Avatar-component" />
+                                                <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" />
                                             </div>
                                         </div>
                                         :
-                                        <FaUserAlt className='mt-2' />
+                                        <FaUserCircle title={user.displayName} className='ml-3 mt-1 color ' />
                                 }
                             </div>
                         </>
