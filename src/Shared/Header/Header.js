@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     return (
-        <div className="navbar nav-lg bg-base-100 px-24">
+        <div className="navbar backgound bg-base-100 px-24">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -34,7 +34,6 @@ const Header = () => {
                             <img src={Logo} alt="Tailwind-CSS-Avatar-component" />
                         </div>
                     </div>
-
                     <Link to='/' className="btn btn-ghost normal-case text-xl">geeks<span className='logo'>Academy</span></Link>
                 </div>
             </div>
@@ -51,7 +50,7 @@ const Header = () => {
                     user?.uid ?
                         <>
                             <button className='btn btn-bg my-2' onClick={handleLogOut} variant="primary">Log out</button>
-                            {/* <Nav.Link href="#deets">{user?.displayName}</Nav.Link> */}
+                            {/* <Link href="#deets">{user?.displayName}</Link> */}
                             <div>
                                 {
                                     user?.photoURL ?
