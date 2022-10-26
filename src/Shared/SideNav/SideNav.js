@@ -17,8 +17,8 @@ const SideNav = () => {
             <h4 className='d-none d-lg-block'>Total Categories: {courses.length} </h4>
             <div>
                 {
-                    courses.map(course => <p key={course.id}>
-                        <Link to={`/course/${course.id}`}>{course.name}</Link>
+                    courses.map(course => <p key={course._id}>
+                        <Link to={`/course/${course._id}`}>{course.name}</Link>
                     </p>
                     )
                 }
