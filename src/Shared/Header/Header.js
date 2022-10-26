@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import Logo from '../../assets/Logo2.png'
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error('error', error))
+    }
+
     return (
         <div className="navbar nav-lg bg-base-100 px-24">
             <div className="navbar-start">
@@ -21,7 +31,7 @@ const Header = () => {
                 <div className='flex justify-center items-center'>
                     <div className="avatar ">
                         <div className="w-8 rounded">
-                            <img src={Logo}  alt="Tailwind-CSS-Avatar-component" />
+                            <img src={Logo} alt="Tailwind-CSS-Avatar-component" />
                         </div>
                     </div>
 
@@ -37,7 +47,31 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-bg">Get started</a>
+                {
+                    user?.uid ?
+                        <>
+                            <button className='btn btn-bg my-2' onClick={handleLogOut} variant="primary">Log out</button>
+                            {/* <Nav.Link href="#deets">{user?.displayName}</Nav.Link> */}
+                            <div>
+                                {
+                                    user?.photoURL ?
+                                        <div className="avatar ">
+                                            <div className="w-8 rounded-full">
+                                                <img src={user?.image} alt="Tailwind-CSS-Avatar-component" />
+                                            </div>
+                                        </div>
+                                        :
+                                        <FaUserAlt className='mt-2' />
+                                }
+                            </div>
+                        </>
+                        :
+                        <>
+                            <Link className='text-light' to='/login'><button className='btn btn-bg mr-2 my-2' variant="primary">Log in</button></Link>
+                            <Link className='text-light' to='/register'><button className='btn btn-bg my-2' variant="primary">Register</button></Link>
+                        </>
+                }
+
             </div>
         </div>
     );
