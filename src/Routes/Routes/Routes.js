@@ -29,10 +29,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/course/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader:({param})=>fetch(`http://localhost:5000/course/${param.id}`)
+                loader:({params})=>fetch(`http://localhost:5000/course/${params.id}`)
             },
             {
-                path: '/blogs',
+                path: '/blog',
                 element: <Blog></Blog>
             },
             {
