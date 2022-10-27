@@ -8,6 +8,7 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/Login/SignUp/SignUp";
+import NotFound from "../../Pages/NotFound/NotFound";
 import StartCourse from "../../Pages/StartCourse/StartCourse";
 import PrivateRoutes from "../PrivateRoute/PrivateRoute";
 
@@ -59,6 +60,7 @@ export const routes = createBrowserRouter([
         ]
     },
     {
-        
+        path:'*',
+        element:<NotFound></NotFound>
     }
 ])
