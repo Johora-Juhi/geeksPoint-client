@@ -71,7 +71,7 @@ const CourseDetails = () => {
                             <div className='text-center my-3'>
                                 <Link className='btn btn-error text-slate-50 ' to={`/startCourse/${_id}`}>Get premium acccess</Link>
                             </div>
-                            <ul className="menu bg-base-100 w-56 bg-red-50">
+                            <ul className="menu w-56 bg-red-50">
                                 <li> <Link><FaFacebook className='text-red-400 mr-3'></FaFacebook> Follow on Facebook</Link></li>
                                 <li> <Link><FaGithub className='text-red-400 mr-3'></FaGithub> Follow on Github</Link></li>
                                 <li> <Link><FaLinkedin className='text-red-400 mr-3'></FaLinkedin> Follow on LinkedIn</Link></li>

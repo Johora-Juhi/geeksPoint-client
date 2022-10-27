@@ -7,7 +7,7 @@ const Toggle = () => {
     return (
         <div className='hidden lg:inline'>
             <div
-                className="md:w-14 md:h-7 w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer"
+                className="md:w-14 md:h-7 w-12 h-6 flex items-center bg-red-400 rounded-full p-1 cursor-pointer"
                 onClick={() => {
                     setToggle(!toggle);
                 }}

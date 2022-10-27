@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import Logo from '../../assets/Logo2.png'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { FaUserAlt, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import Toggle from '../../Pages/Toggle/Toggle';
 
 const Header = () => {

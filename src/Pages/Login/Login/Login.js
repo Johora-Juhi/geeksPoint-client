@@ -76,7 +76,7 @@ const Login = () => {
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <p className='label-text-alt'>New here? Please  <Link to='/signUp' className=" link link-hover"> Sign Up</Link></p>
+                                <p className='label-text-alt'>New here? Please  <Link to='/signUp' className=" link link-primary link-hover"> Sign Up</Link></p>
                             </label>
                         </div>
                         <div className="form-control mt-6">

@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
     const { createUser, updateUser } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const nevigate = useNavigate();
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -22,6 +25,7 @@ const SignUp = () => {
                 handleUpdateUser(name,photoURL);
                 const user = result.user;
                 console.log(user);
+                nevigate(from, { replace: true });
                 form.reset();
             })
             .catch(error => {
@@ -71,7 +75,7 @@ const SignUp = () => {
                         </label>
                         <input name='password' type="password" placeholder="password" className="input input-bordered" required/>
                         <label className="label">
-                            <p className='label-text-alt'>Already have an account?  <Link to='/signUp' className=" link link-hover link-primary"> Log In</Link></p>
+                            <p className='label-text-alt'>Already have an account?  <Link to='/login' className=" link link-hover link-primary"> Log In</Link></p>
                         </label>
                     </div>
                     <div className="form-control mt-6">
