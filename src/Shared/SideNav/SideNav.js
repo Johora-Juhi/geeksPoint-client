@@ -13,9 +13,9 @@ const SideNav = () => {
     },[])
 
     return (
-        <div className='rounded border border-red-400 p-5'>
+        <div className='rounded border border-red-400 p-5 bg-red-50'>
             <h4 className='d-none d-lg-block text-xl font-medium'>Total Categories: {courses.length} </h4>
-            <ul className="menu bg-base-100 w-16 lg:w-28">
+            <ul className="menu w-16 lg:w-28 bg-red-50">
                 {
                     courses.map(course => <p key={course._id}>
                         <li><Link className='pt-2' to={`/course/${course._id}`}>{course.title}</Link></li>

@@ -40,7 +40,7 @@ const CourseDetails = () => {
                                             <img src={author.img} />
                                         </div>
                                     </div>
-                                    <p className='text-bold'>{author.name}</p>
+                                    <p className='font-bold'>{author.name}</p>
                                 </div>
                                 <div>
                                     <h2 className='text-xl font-medium  pt-3 mb-3'>Course Details</h2>
