@@ -6,16 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
-.btn-bg{
-  background-color: #F56962;
-  border: none;
-}
-.backgound{
-  background-color: #fef0ef;
-}
-.color{
-  color:#F56962 ;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

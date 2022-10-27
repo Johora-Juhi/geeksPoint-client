@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const SideNav = () => {
-    const [courses,setCourses]=useState([]);
+    const [courses, setCourses] = useState([]);
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/courses')
-        .then(res=>res.json())
-        .then(data=>setCourses(data))
-    },[])
+    useEffect(() => {
+        fetch('https://assignment-ten-server-xi.vercel.app/courses')
+            .then(res => res.json())
+            .then(data => setCourses(data))
+    }, [])
 
     return (
         <div className='rounded border border-red-400 p-5 bg-red-50'>

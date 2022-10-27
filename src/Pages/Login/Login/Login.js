@@ -56,13 +56,13 @@ const Login = () => {
             .catch(error => console.error('error', error))
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen">
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Please login here!</h1>
                     <p className="py-6">We will not share your information.</p>
                 </div>
-                <div className="card backgound flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-red-50">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -80,7 +80,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-bg btn-error">Log In</button>
+                            <button className="btn btn-error text-slate-50">Log In</button>
                         </div>
                         <label className="label">
                             <p className='label-text-alt text-red-600'>{error}</p>

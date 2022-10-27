@@ -16,7 +16,7 @@ const Header = () => {
     }
 
     return (
-        <div className="navbar backgound bg-base-100 mb-10 ">
+        <div className="navbar bg-red-50 mb-10 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <img style={{ width: '35px', marginLeft: '20px' }} src={Logo} alt="" />
-                    <h1 className='normal-case text-xl pl-3'>geeks<span className='logo'>Point</span></h1>
+                    <h1 className='normal-case text-xl font-semibold pl-3'>geeks<span className='logo'>Point</span></h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -47,7 +47,7 @@ const Header = () => {
                 {
                     user?.uid ?
                         <>
-                            <button className='btn btn-bg my-2' onClick={handleLogOut} variant="primary">Log out</button>
+                            <button className='btn btn-error text-slate-50 my-2' onClick={handleLogOut} variant="primary">Log out</button>
                             <div>
                                 {
                                     user?.photoURL ?
@@ -57,14 +57,14 @@ const Header = () => {
                                             </div>
                                         </div>
                                         :
-                                        <FaUserCircle style={{ fontSize: '30px' }} title={user.displayName} className='ml-3 mt-1 color ' />
+                                        <FaUserCircle style={{ fontSize: '30px' }} title={user.displayName} className='ml-3 mt-1 text-red-400' />
                                 }
                             </div>
                         </>
                         :
                         <>
-                            <Link className='text-light' to='/login'><button className='btn btn-bg mr-2 my-2' variant="primary">Log in</button></Link>
-                            <Link className='text-light hidden lg:inline' to='/signUp'><button className='btn btn-bg my-2' variant="primary">Register</button></Link>
+                            <Link className='text-light' to='/login'><button className='btn btn-error text-slate-50 mr-2 my-2' variant="primary">Log in</button></Link>
+                            <Link className='text-light hidden lg:inline' to='/signUp'><button className='btn btn-error text-slate-50 my-2' variant="primary">Register</button></Link>
                         </>
                 }
 

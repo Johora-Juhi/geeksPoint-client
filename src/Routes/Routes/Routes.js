@@ -24,17 +24,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://assignment-ten-server-xi.vercel.app/courses')
             },
             {
                 path: '/course',
                 element: <Course></Course>,
-                loader: () => fetch('http://localhost:5000/course')
+                loader: () => fetch('https://assignment-ten-server-xi.vercel.app/course')
             },
             {
                 path: '/course/:id',
-                element:<CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                element: <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`https://assignment-ten-server-xi.vercel.app/course/${params.id}`)
             },
             {
                 path: '/blog',
@@ -55,12 +55,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/startCourse/:id',
                 element: <PrivateRoutes><GetPremiumAccess></GetPremiumAccess></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-ten-server-xi.vercel.app/course/${params.id}`)
             }
         ]
     },
     {
-        path:'*',
-        element:<NotFound></NotFound>
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ])
