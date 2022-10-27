@@ -5,7 +5,7 @@ import { FaGoogle, FaGithub, } from 'react-icons/fa';
 
 
 const Login = () => {
-    const { signIn,googleLogin } = useContext(AuthContext);
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
     const [error, setError] = useState('');
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -19,14 +19,14 @@ const Login = () => {
         const password = form.password.value;
         // console.log(email, password);
         setError('');
-       
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 nevigate(from, { replace: true });
                 form.reset();
-                
+
             })
             .catch(error => {
                 console.error('error', error);
@@ -38,12 +38,22 @@ const Login = () => {
     const handleGoogleSignIn = () => {
 
         googleLogin()
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
-            nevigate(from, { replace: true });
-        })
-        .catch(error=> console.error('error',error))
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                nevigate(from, { replace: true });
+            })
+            .catch(error => console.error('error', error))
+    }
+    const handleGithubSignIn = () => {
+
+        githubLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                nevigate(from, { replace: true });
+            })
+            .catch(error => console.error('error', error))
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -77,7 +87,7 @@ const Login = () => {
                         </label>
                         <div className="divider">OR</div>
                         <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><FaGoogle className='mr-2' /> Log In With Google</button>
-                        <button className="btn btn-outline"><FaGithub className='mr-2' /> Log In With Github</button>
+                        <button onClick={handleGithubSignIn} className="btn btn-outline"><FaGithub className='mr-2' /> Log In With Github</button>
                     </form>
                 </div>
             </div>
