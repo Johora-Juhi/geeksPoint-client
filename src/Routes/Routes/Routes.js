@@ -8,6 +8,7 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/Login/SignUp/SignUp";
+import StartCourse from "../../Pages/StartCourse/StartCourse";
 import PrivateRoutes from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
@@ -22,17 +23,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader:()=> fetch('http://localhost:5000/courses')
+                loader: () => fetch('http://localhost:5000/courses')
             },
             {
-                path:'/course',
-                element:<Course></Course>,
-                loader:()=>fetch('http://localhost:5000/course')
+                path: '/course',
+                element: <Course></Course>,
+                loader: () => fetch('http://localhost:5000/course')
             },
             {
                 path: '/course/:id',
-                element: <PrivateRoutes><CourseDetails></CourseDetails></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:5000/course/${params.id}`)
+                element:<CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
             {
                 path: '/blog',
@@ -43,12 +44,17 @@ export const routes = createBrowserRouter([
                 element: <FAQ></FAQ>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/signUp',
-                element:<SignUp></SignUp>
+                path: '/signUp',
+                element: <SignUp></SignUp>
+            },
+            {
+                path: '/startCourse/:id',
+                element: <PrivateRoutes><StartCourse></StartCourse></PrivateRoutes>,
+                loader:({params})=>fetch(`http://localhost:5000/course/${params.id}`)
             }
         ]
     }

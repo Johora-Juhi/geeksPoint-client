@@ -18,7 +18,7 @@ const SideNav = () => {
             <div>
                 {
                     courses.map(course => <p key={course._id}>
-                        <Link to={`/course/${course._id}`}>{course.name}</Link>
+                        <Link to={`/course/${course._id}`}>{course.title}</Link>
                     </p>
                     )
                 }

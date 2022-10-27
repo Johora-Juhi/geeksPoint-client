@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import { FaGoogle, FaGithub, FaFacebook, FaYoutube, FaWhatsapp, FaTwitter, FaTwitch, FaAlignJustify } from 'react-icons/fa';
+import { FaGoogle, FaGithub, } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -18,15 +18,15 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         // console.log(email, password);
+        setError('');
        
-
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                setError('');
-                form.reset();
                 nevigate(from, { replace: true });
+                form.reset();
+                
             })
             .catch(error => {
                 console.error('error', error);
@@ -34,7 +34,6 @@ const Login = () => {
             })
 
     }
-
 
     const handleGoogleSignIn = () => {
 

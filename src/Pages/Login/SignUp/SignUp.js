@@ -75,11 +75,11 @@ const SignUp = () => {
                         </label>
                         <input name='password' type="password" placeholder="password" className="input input-bordered" required/>
                         <label className="label">
-                            <p className='label-text-alt'>Already have an account?  <Link to='/signUp' className=" link link-hover"> Log In</Link></p>
+                            <p className='label-text-alt'>Already have an account?  <Link to='/signUp' className=" link link-hover link-primary"> Log In</Link></p>
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-bg btn-primary">Sign Up</button>
+                        <button className=" btn btn-bg btn-primary">Sign Up</button>
                     </div>
                     <label className="label">
                             <p className='label-text-alt text-red-600'>{error}</p>

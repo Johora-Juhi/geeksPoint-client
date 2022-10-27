@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     return (
-        <div className="navbar backgound bg-base-100 px-24">
+        <div className="navbar backgound bg-base-100 mb-10 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -26,16 +26,17 @@ const Header = () => {
                         <li><Link to='/courses'>Courses</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/faq'>Faq</Link></li>
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost rounded-btn">Dropdown</label>
+                            <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                                <li><a>Item 1</a></li>
+                                <li><a>Item 2</a></li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
-                <div className='flex justify-center items-center'>
-                    <div className="avatar ">
-                        <div className="w-8 rounded">
-                            <img src={Logo} alt="Tailwind-CSS-Avatar-component" />
-                        </div>
-                    </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">geeks<span className='logo'>Academy</span></Link>
-                </div>
+                <img style={{ width: '35px', marginLeft: '20px' }} src={Logo} alt="" />
+                    <h1 className='normal-case text-xl pl-3'>geeks<span className='logo'>Point</span></h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -59,14 +60,14 @@ const Header = () => {
                                             </div>
                                         </div>
                                         :
-                                        <FaUserCircle style={{fontSize:'30px'}} title={user.displayName} className='ml-3 mt-1 color ' />
+                                        <FaUserCircle style={{ fontSize: '30px' }} title={user.displayName} className='ml-3 mt-1 color ' />
                                 }
                             </div>
                         </>
                         :
                         <>
                             <Link className='text-light' to='/login'><button className='btn btn-bg mr-2 my-2' variant="primary">Log in</button></Link>
-                            <Link className='text-light' to='/signUp'><button className='btn btn-bg my-2' variant="primary">Register</button></Link>
+                            <Link className='text-light hidden lg:inline' to='/signUp'><button className='btn btn-bg my-2' variant="primary">Register</button></Link>
                         </>
                 }
 
