@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBusinessTime, FaCertificate, FaChild, FaCrown, FaDollarSign, FaFacebook, FaGithub, FaLaptopCode, FaLinkedin, FaTape, FaTwitter, FaVideo } from 'react-icons/fa';
+import { FaBusinessTime, FaCertificate, FaChild, FaCrown, FaDollarSign, FaFacebook, FaFileDownload, FaGithub, FaLaptopCode, FaLinkedin, FaTape, FaTwitter, FaVideo } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import Pdf from 'react-to-pdf';
 
@@ -31,7 +31,12 @@ const CourseDetails = () => {
                     <div className='col-span-2'>
                         <figure><img className='mx-auto rounded-lg' style={{ width: '500px' }} src={image} alt="course" /></figure>
                         <div className='px-10 py-10'>
-                            <h2 className='text-3xl font-medium mb-3'>Why {title}!!</h2>
+                            <div className='flex justify-between items-center pb-3'>
+                                <h2 className='text-3xl font-medium mb-3'>Why {title}!!</h2>
+                                <Pdf targetRef={ref} filename="geeksPoint.pdf">
+                                    {({ toPdf }) => <button onClick={toPdf} className="btn btn-outline btn-error text-red-400 text-center"><FaFileDownload className='inline'></FaFileDownload></button>}
+                                </Pdf>
+                            </div>
                             <p className='text-justify text-lg'>{description}</p>
                             <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 bg-red-50 rounded-tl-3xl rounded-br-3xl border border-red-400 mt-5 p-6">
                                 <div className='text-center'>
@@ -64,7 +69,7 @@ const CourseDetails = () => {
                                 <div className='flex items-center mb-1'><FaCrown className='text-red-400 mr-3'></FaCrown>Successfully Completed: {completed}</div>
                             </div>
                             <div className='text-center my-3'>
-                                <Link className='btn btn-error text-slate-50 ' to={`/startCourse/${_id}`}> Enroll Now</Link>
+                                <Link className='btn btn-error text-slate-50 ' to={`/startCourse/${_id}`}>Get premium acccess</Link>
                             </div>
                             <ul className="menu bg-base-100 w-56 bg-red-50">
                                 <li> <Link><FaFacebook className='text-red-400 mr-3'></FaFacebook> Follow on Facebook</Link></li>
@@ -76,9 +81,7 @@ const CourseDetails = () => {
                     </div>
                 </div>
                 <div className='text-center mt-5'>
-                    <Pdf targetRef={ref} filename="geeksPoint.pdf">
-                        {({ toPdf }) => <button onClick={toPdf} className="btn btn-active btn-error text-slate-50 text-center">Download PDF</button>}
-                    </Pdf>
+
                 </div>
             </div>
         </div>
