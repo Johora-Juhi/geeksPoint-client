@@ -13,16 +13,16 @@ const SideNav = () => {
     },[])
 
     return (
-        <div>
-            <h4 className='d-none d-lg-block'>Total Categories: {courses.length} </h4>
-            <div>
+        <div className='rounded border border-red-400 p-5'>
+            <h4 className='d-none d-lg-block text-xl font-medium'>Total Categories: {courses.length} </h4>
+            <ul className="menu bg-base-100 w-16 lg:w-28">
                 {
                     courses.map(course => <p key={course._id}>
-                        <Link to={`/course/${course._id}`}>{course.title}</Link>
+                        <li><Link className='pt-2' to={`/course/${course._id}`}>{course.title}</Link></li>
                     </p>
                     )
                 }
-            </div>
+            </ul>
         </div>
     );
 };

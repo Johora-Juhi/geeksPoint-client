@@ -26,13 +26,6 @@ const Header = () => {
                         <li><Link to='/courses'>Courses</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/faq'>Faq</Link></li>
-                        <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost rounded-btn">Dropdown</label>
-                            <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                                <li><a>Item 1</a></li>
-                                <li><a>Item 2</a></li>
-                            </ul>
-                        </div>
                     </ul>
                 </div>
                 <img style={{ width: '35px', marginLeft: '20px' }} src={Logo} alt="" />

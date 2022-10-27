@@ -5,7 +5,6 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 const SignUp = () => {
     const { createUser, updateUser } = useContext(AuthContext);
     const [error, setError] = useState('');
-    const [clicked, setClicked] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -37,11 +36,8 @@ const SignUp = () => {
             photoURL:photoURL
         }
         updateUser(profile);
+    }
 
-    }
-    const handleClicked = event => {
-        setClicked(event.target.checked);
-    }
     return (
         <div  className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">

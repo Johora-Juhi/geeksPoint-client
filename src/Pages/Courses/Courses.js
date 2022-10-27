@@ -19,7 +19,7 @@ const Courses = () => {
                         }
                     </div>
                 </div>
-                <div class="lg:col-start-6 lg:col-end-8..."><SideNav></SideNav></div>
+                <div class="lg:col-start-6 lg:col-end-8... "><SideNav></SideNav></div>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaBusinessTime, FaCertificate, FaChild, FaCrown, FaDollarSign, FaLaptopCode, FaTape, FaVideo } from 'react-icons/fa';
+import { FaBusinessTime, FaCertificate, FaChild, FaCrown, FaDollarSign, FaFacebook, FaGithub, FaLaptopCode, FaLinkedin, FaTape, FaTwitter, FaVideo } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
-import Pdf from "react-to-pdf";
+import Pdf from 'react-to-pdf';
 
 const ref = React.createRef();
 
@@ -27,7 +27,7 @@ const CourseDetails = () => {
                     <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-1" />
                     <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-2" />
                 </div>
-                <div className='grid grid-cols-1 lg:grid-cols-3'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 pt-5'>
                     <div className='col-span-2'>
                         <figure><img className='mx-auto rounded-lg' style={{ width: '500px' }} src={image} alt="course" /></figure>
                         <div className='px-10 py-10'>
@@ -51,28 +51,32 @@ const CourseDetails = () => {
                                     <h2 className='text-xl font-medium pt-3 mb-3'>You'll Get</h2>
                                     <div className='flex items-center mb-1'><FaBusinessTime className='text-red-400 mr-3'></FaBusinessTime>Lifetime Access</div>
                                     <div className='flex items-center mb-1'><FaCertificate className='text-red-400 mr-3'></FaCertificate>Certification</div>
-
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className='rounded border border-red-400  p-5'>
                             <h2 className='text-xl font-medium  mb-3  '>Course Enroll Details</h2>
-                            <div className='flex items-center mb-1'><FaDollarSign className='text-red-400 mr-3'></FaDollarSign>Price: ${price}</div>
-                            <div className='flex items-center mb-1'><FaChild className='text-red-400 mr-3'></FaChild>Total Enrolled: {totalEnrolled}</div>
-                            <div className='flex items-center mb-1'><FaCrown className='text-red-400 mr-3'></FaCrown>Successfully Completed: {completed}</div>
-                            <div className='text-center mt-3'>
-                            <Link className='btn btn-error text-slate-50 ' to={`/startCourse/${_id}`}> Enroll Now</Link>
+                            <div className='pl-3 pb-2'>
+                                <div className='flex items-center mb-1'><FaDollarSign className='text-red-400 mr-3'></FaDollarSign>Price: ${price}</div>
+                                <div className='flex items-center mb-1'><FaChild className='text-red-400 mr-3'></FaChild>Total Enrolled: {totalEnrolled}</div>
+                                <div className='flex items-center mb-1'><FaCrown className='text-red-400 mr-3'></FaCrown>Successfully Completed: {completed}</div>
                             </div>
+                            <div className='text-center my-3'>
+                                <Link className='btn btn-error text-slate-50 ' to={`/startCourse/${_id}`}> Enroll Now</Link>
+                            </div>
+                            <ul className="menu bg-base-100 w-56 bg-red-50">
+                                <li> <Link><FaFacebook className='text-red-400 mr-3'></FaFacebook> Follow on Facebook</Link></li>
+                                <li> <Link><FaGithub className='text-red-400 mr-3'></FaGithub> Follow on Github</Link></li>
+                                <li> <Link><FaLinkedin className='text-red-400 mr-3'></FaLinkedin> Follow on LinkedIn</Link></li>
+                                <li> <Link><FaTwitter className='text-red-400 mr-3'></FaTwitter> Follow on Twitter</Link></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div className='text-center mt-5'>
-                    <Pdf targetRef={ref} filename="geeksAcademy.pdf">
+                    <Pdf targetRef={ref} filename="geeksPoint.pdf">
                         {({ toPdf }) => <button onClick={toPdf} className="btn btn-active btn-error text-slate-50 text-center">Download PDF</button>}
                     </Pdf>
                 </div>
