@@ -13,7 +13,7 @@ const SideNav = () => {
     }, [])
 
     return (
-        <div className='rounded border border-sky-900 p-5 '>
+        <div className='rounded border border-sky-900 p-5'>
             <h4 className='d-none d-lg-block text-xl font-medium text-sky-900'>Total Categories: {courses.length} </h4>
             <ul className="menu w-16 lg:w-28">
                 {

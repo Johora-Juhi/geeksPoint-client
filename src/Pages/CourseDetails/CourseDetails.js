@@ -13,7 +13,7 @@ const CourseDetails = () => {
     return (
         <div ref={ref} className=" ">
             <div className="container mx-auto py-10">
-                <h1 className='flex items-center text-4xl font-bold text-sky-900'><FaLaptopCode className='inline mr-3 ml-10 text-4xl text-sky-900'></FaLaptopCode> <span>Start Your {title} Course</span></h1>
+                <h1 className='flex items-center text-2xl lg:text-4xl font-bold text-sky-900'><FaLaptopCode className='inline mr-3 ml-10 text-4xl text-sky-900'></FaLaptopCode> <span>Start Your {title} Course</span></h1>
                 <div className="rating rating-sm rating-half ml-8 mt-3">
                     <input type="radio" name="rating-10" className="rating-hidden" />
                     <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-1" />
