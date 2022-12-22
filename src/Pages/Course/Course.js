@@ -8,11 +8,11 @@ const Course = ({ course }) => {
     console.log(course)
 
     return (
-        <div style={{width:'100%'}} className="card card-compact w-96 shadow-xl bg-red-50">
+        <div style={{width:'100%'}} className="card card-compact w-96 shadow-xl bg-base-200">
             <figure><img src={image} alt="course" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p><FaStar className='inline text-orange-400 mr-2'></FaStar><FaStar className='inline text-orange-400 mr-2'></FaStar><FaStar className='inline text-orange-400 mr-2'></FaStar><FaStar className='inline text-orange-400 mr-2'></FaStar><FaStar className='inline text-orange-400 mr-2'></FaStar>{ratings}</p>
+                <h2 className="card-title text-sky-900">{title}</h2>
+                <p><FaStar className='inline text-yellow-600 mr-2'></FaStar><FaStar className='inline text-yellow-600 mr-2'></FaStar><FaStar className='inline text-yellow-600 mr-2'></FaStar><FaStar className='inline text-yellow-600 mr-2'></FaStar><FaStar className='inline text-yellow-600 mr-2'></FaStar>{ratings}</p>
                 <div className="divider"></div>
                 <p> {
                     description.length > 250 ?
@@ -28,7 +28,7 @@ const Course = ({ course }) => {
                             </div>
                         </div>
                         <div>
-                            <p className='font-bold text-red-400'>{author.name}</p>
+                            <p className='font-bold text-sky-900'>{author.name}</p>
                             <p > Instructor</p>
                         </div>
                     </div>
