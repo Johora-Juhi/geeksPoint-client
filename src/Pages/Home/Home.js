@@ -5,7 +5,7 @@ import Banner from '../../assets/banner.jpeg';
 
 const Home = () => {
     return (
-        <div className=' bg-red-50 flex flex-col-reverse lg:flex-row  justify-center items-center py-10 gap-10'>
+        <div className='  flex flex-col-reverse lg:flex-row  justify-center items-center py-10 gap-10'>
             <div className="">
                 
                 <h1 className='text-3xl lg:text-5xl font-extrabold  py-5'>geeks<span className='text-red-400'>Point</span></h1>

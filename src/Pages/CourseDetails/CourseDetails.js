@@ -11,21 +11,21 @@ const CourseDetails = () => {
     const { _id, image, title, description, author, price, totalEnrolled, completed, videos, videoDuration
     } = course;
     return (
-        <div ref={ref} className="bg-red-50 ">
+        <div ref={ref} className=" ">
             <div className="container mx-auto py-10">
-                <h1 className='text-2xl font-semibold'><FaLaptopCode className='inline mr-3 text-red-400'></FaLaptopCode> Start your {title} course</h1>
+                <h1 className='text-2xl font-semibold'><FaLaptopCode className='inline mr-3 ml-10 text-red-400'></FaLaptopCode> Start your {title} course</h1>
                 <div className="rating rating-sm rating-half ml-8 mt-3">
                     <input type="radio" name="rating-10" className="rating-hidden" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-1" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-2" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-1" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-2" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-1" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-2" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-1" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-2" checked />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-1" />
-                    <input type="radio" name="rating-10" className="bg-red-400 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-2" checked />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-yellow-500 mask mask-star-2 mask-half-2" />
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-3 pt-5'>
                     <div className='col-span-2'>
@@ -61,7 +61,7 @@ const CourseDetails = () => {
                         </div>
                     </div>
                     <div>
-                        <div className='rounded border border-red-400  p-5'>
+                        <div className='rounded border border-red-400 mx-10 lg:mx-0  p-5'>
                             <h2 className='text-xl font-medium  mb-3  '>Course Enroll Details</h2>
                             <div className='pl-3 pb-2'>
                                 <div className='flex items-center mb-1'><FaDollarSign className='text-red-400 mr-3'></FaDollarSign>Price: ${price}</div>
@@ -71,7 +71,7 @@ const CourseDetails = () => {
                             <div className='text-center my-3'>
                                 <Link className='btn btn-error text-slate-50 ' to={`/startCourse/${_id}`}>Get premium acccess</Link>
                             </div>
-                            <ul className="menu w-56 bg-red-50">
+                            <ul className="menu w-56 ">
                                 <li> <Link><FaFacebook className='text-blue-400 mr-3'></FaFacebook> Follow on Facebook</Link></li>
                                 <li> <Link><FaGithub className='text-gray-800 mr-3'></FaGithub> Follow on Github</Link></li>
                                 <li> <Link><FaLinkedin className='text-sky-600 mr-3'></FaLinkedin> Follow on LinkedIn</Link></li>

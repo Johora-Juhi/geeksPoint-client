@@ -30,7 +30,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <img style={{ width: '35px', marginLeft: '20px' }} src={Logo} alt="" />
-                    <h1 className='normal-case text-xl font-semibold pl-3'>geeks<span className='logo'>Point</span></h1>
+                    <h1 className='normal-case text-3xl font-semibold pl-3 mb-2'>geeks<span className='logo'>Point</span></h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -63,8 +63,8 @@ const Header = () => {
                         </>
                         :
                         <>
-                            <Link className='text-light' to='/login'><button className='btn btn-error text-slate-50 mr-2 my-2' variant="primary">Log in</button></Link>
-                            <Link className='text-light hidden lg:inline' to='/signUp'><button className='btn btn-error text-slate-50 my-2' variant="primary">Register</button></Link>
+                            <Link className='text-light' to='/login'><button className='btn btn-error btn-outline text-slate-50 mr-2 my-2' variant="primary">Log in</button></Link>
+                            {/* <Link className='text-light hidden lg:inline' to='/signUp'><button className='btn btn-error text-slate-50 my-2' variant="primary">Register</button></Link> */}
                         </>
                 }
 
