@@ -41,9 +41,9 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className='mr-2'>
-                <Toggle></Toggle>
-                </div>
+                {/* <div className='mr-2'>
+                 <Toggle></Toggle> 
+                </div> */}
                 {
                     user?.uid ?
                         <>
